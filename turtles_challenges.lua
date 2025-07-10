@@ -146,6 +146,7 @@ SMODS.Challenge({ -- AAAA but fuck you
             {id="tag_standard"},
         },
         banned_other = {
+            { id = 'bl_psychic', type = 'blind' },
         },
     },
     deck = {
