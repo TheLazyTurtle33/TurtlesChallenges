@@ -1,0 +1,10 @@
+{
+  "id": "turtles_challenges",
+  "name": "Turtle's Challenges",
+  "display_name": "Turtle's Challenges",
+  "author": ["LazyTurtle33"],
+  "description": "Adds some Challenges made by LazyTurtle33",
+  "prefix": "tc",
+  "main_file": "turtles_challenges.lua",
+  "version": "1.1.0"
+}
