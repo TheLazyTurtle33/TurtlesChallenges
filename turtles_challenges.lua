@@ -161,7 +161,7 @@ SMODS.Challenge({ -- AAAA but fuck you
     
 })
 
-SMODS.Challenge({
+SMODS.Challenge({ -- Empty Orbit
 	key = "empty_orbit",
     rules = {
         custom = {
@@ -203,8 +203,8 @@ SMODS.Challenge({
     
 })
 
-
-SMODS.Challenge({
+--[[
+SMODS.Challenge({ -- NOPE
 	key = "nope",
     rules = {
         custom = {
@@ -240,7 +240,7 @@ SMODS.Challenge({
 	end
     
 })
-
+]]
 
 local game_start_run_ref = Game.start_run
 function Game:start_run(args)
@@ -268,6 +268,7 @@ function Game:start_run(args)
     end
 end
 
+--[[
 
 render_nope = function (used_tarot)
     G.E_MANAGER:add_event(Event({
@@ -706,6 +707,7 @@ G.FUNCS.use_card = function(e, mute, nosave)
     end
 end
 
+]]
 
 -- local evaluate_play_ref = G.FUNCS.evaluate_play;
 -- G.FUNCS.evaluate_play = function(e)
