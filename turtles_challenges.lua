@@ -301,7 +301,6 @@ end
 
 local Blind_set_blind_ref = Blind.set_blind
 function Blind:set_blind(blind, reset, silent)
-    print(G.GAME.modifiers.nope)
     if not copier then set_consumeable_usage(self) end
     local used_tarot = copier or self
     local ret = Blind_set_blind_ref(self, blind, reset, silent)
@@ -345,6 +344,8 @@ end
 
 local CardClickRef = Card.click;
 function Card:click()
+    print(G.GAME.last_tarot_planet)
+    local ltp = G.GAME.last_tarot_planet
     if not copier then set_consumeable_usage(self) end
     local used_tarot = copier or self
 
@@ -379,6 +380,7 @@ function Card:click()
                     return true
                 end
             }))
+            G.GAME.last_tarot_planet = ltp
         else
             CardClickRef(self)
         end
