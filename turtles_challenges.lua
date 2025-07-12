@@ -167,7 +167,7 @@ SMODS.Challenge({ -- AAAA but fuck you
 
 })
 
-SMODS.Challenge({
+SMODS.Challenge({ -- Empty Orbit
     key = "empty_orbit",
     rules = {
         custom = {
@@ -729,6 +729,7 @@ G.FUNCS.use_card = function(e, mute, nosave)
         use_card_ref(e, mute, nosave)
     end
 end
+
 
 
 -- local evaluate_play_ref = G.FUNCS.evaluate_play;
