@@ -684,30 +684,37 @@ G.FUNCS.use_card = function(e, mute, nosave)
                         if card.cost ~= 0 then
                             ease_dollars(-card.cost)
                         end
+                        --     -- else
+                        --     --     G.FUNCS.skip_booster(e)
                         -- else
-                        --     G.FUNCS.skip_booster(e)
-                    else
-                        G.GAME.pack_choices = G.GAME.pack_choices - 1
+                        --     G.GAME.pack_choices = G.GAME.pack_choices - 1
 
-                        card.getting_sliced = true
-                        G.E_MANAGER:add_event(Event({
-                            func = function()
-                                card:start_dissolve({ G.C.RED }, nil, 1.6)
-                                return true
-                            end
-                        }))
-                        if G.GAME.pack_choices <= 0 then
-                            G.CONTROLLER.interrupt.focus = true
-                            G.FUNCS.end_consumeable(nil, 0.2)
-                        end
+                        --     card.getting_sliced = true
+                        --     G.E_MANAGER:add_event(Event({
+                        --         func = function()
+                        --             card:start_dissolve({ G.C.RED }, nil, 1.6)
+                        --             return true
+                        --         end
+                        --     }))
+                        --     if G.GAME.pack_choices <= 0 then
+                        --         G.CONTROLLER.interrupt.focus = true
+                        --         G.FUNCS.end_consumeable(nil, 0.2)
+                        --     end
                     end
 
                     return true
                 end
             }))
-            if not ((card.ability.set == 'Booster' or card.ability.set == 'Voucher') and not nosave and G.STATE == G.STATES.SHOP) then
+            if G.STATE == G.STATES.TAROT_PACK or G.STATE == G.STATES.PLANET_PACK or G.STATE == G.STATES.BUFFOON_PACK or G.STATE == G.STATES.STANDARD_PACK then
                 G.GAME.pack_choices = G.GAME.pack_choices - 1
 
+
+                if G.GAME.pack_choices <= 0 then
+                    G.CONTROLLER.interrupt.focus = true
+                    G.FUNCS.end_consumeable(nil, 1)
+                end
+            end
+            if not (card.ability.set == 'Booster' or card.ability.set == 'Voucher') then
                 card.getting_sliced = true
                 G.E_MANAGER:add_event(Event({
                     func = function()
@@ -715,12 +722,8 @@ G.FUNCS.use_card = function(e, mute, nosave)
                         return true
                     end
                 }))
-                if G.GAME.pack_choices <= 0 then
-                    G.CONTROLLER.interrupt.focus = true
-                    G.FUNCS.end_consumeable(nil, 0.2)
-                end
+                e.disable_button = nil
             end
-            e.disable_button = nil
             return false
         else
             use_card_ref(e, mute, nosave)
