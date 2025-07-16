@@ -1,5 +1,5 @@
 {
   "Lua.diagnostics.globals": ["SMODS", "NFS"],
-  "cSpell.words": ["SMODS"],
+  "cSpell.words": ["chal", "SMODS"],
   "Lua.diagnostics.disable": ["undefined-global"]
 }

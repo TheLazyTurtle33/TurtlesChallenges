@@ -40,3 +40,29 @@ for _, chal in pairs(challenges) do
         assert(SMODS.load_file("challenges/" .. chal))()
     end
 end
+
+local game_start_run_ref = Game.start_run
+function Game:start_run(args)
+    game_start_run_ref(self, args)
+    local saveTable = args.savetext or nil
+    if not saveTable then
+        if args.challenge then
+            local _ch = args.challenge
+            if _ch.rules then
+                if _ch.rules.custom then
+                    for k, v in ipairs(_ch.rules.custom) do
+                        if v.id == 'blind_size_multi' then
+                            G.GAME.starting_params.ante_scaling = v.value
+                        elseif v.id == 'reach_x_ante' then
+                            G.GAME.win_ante = v.value
+                        elseif v.id == 'no_planets' then
+                            G.GAME.planet_rate = 0
+                        elseif v.id == 'ante_scaling_2x' then
+                            G.GAME.modifiers.scaling = 2
+                        end
+                    end
+                end
+            end
+        end
+    end
+end

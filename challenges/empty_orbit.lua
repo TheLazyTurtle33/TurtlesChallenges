@@ -20,6 +20,7 @@ SMODS.Challenge({ -- Empty Orbit
             { id = 'j_space' },
             { id = 'j_burnt' },
             { id = 'c_high_priestess' },
+            { id = 'c_trance' },
             {
                 id = 'p_celestial_normal_1',
                 ids = {
@@ -27,6 +28,23 @@ SMODS.Challenge({ -- Empty Orbit
                     'p_celestial_jumbo_1', 'p_celestial_jumbo_2', 'p_celestial_mega_1', 'p_celestial_mega_2',
                 }
             },
+            {
+                id = 'c_pluto',
+                ids = {
+                    'c_mercury',
+                    'c_venus',
+                    'c_earth',
+                    'c_mars',
+                    'c_jupiter',
+                    'c_saturn',
+                    'c_uranus',
+                    'c_neptune',
+                    'c_pluto',
+                    'c_ceres',
+                    'c_pluto_minor',
+                    'c_eris',
+                },
+            }
         },
         banned_tags = {
             { id = "tag_meteor" },
