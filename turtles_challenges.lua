@@ -3,7 +3,7 @@ SMODS.Challenge({
 	key = "",
     rules = {
         custom = {
-
+            { id = "by_lazyturtle33" },
         },
         modifiers = {
             --{id = 'dollars', value = 4},
@@ -11,7 +11,7 @@ SMODS.Challenge({
             --{id = 'hands', value = 4},
             --{id = 'hand_size', value = 8},
             --{id = 'joker_slots', value = 5},
-            --{id = 'reroll_cost', value = 10},
+            --{id = 'reroll_cost', value = 5},
             --{id = 'consumable_slots', value = 2},
         },
     },
