@@ -9,7 +9,7 @@ SMODS.Challenge({
             { id = "by_lazyturtle33" },
         },
         modifiers = {
-            { id = 'dollars', value = 10 },
+            { id = 'dollars', value = 15 },
             --{id = 'discards', value = 3},
             --{id = 'hands', value = 4},
             --{id = 'hand_size', value = 8},

@@ -2,12 +2,11 @@ return {
     descriptions = {
         Tag = {
             tag_tc_stock_market = {
-                name = "High Risk Tag",
+                name = "Stock Market",
                 text = {
-                    "When selecting {C:attention}Boss",
-                    "{C:attention}Blind{}, {C:attention}double{} its",
-                    "score requirement",
-                    "and gain {C:money}$"
+                    "When {C:attention}Blind{} is defeated",
+                    "earn between {C:red}-75%{} and {C:attention}150%{} of money",
+                    "as reword"
                 }
             },
         },
