@@ -20,13 +20,12 @@ SMODS.Challenge({
     },
     restrictions = {
         banned_cards = {
-            { id = "j_diet_cola" },
         },
         banned_tags = {
-            { id = "tag_double" },
         },
         banned_other = {
         },
+
     },
     deck = {
         type = 'Challenge Deck'
