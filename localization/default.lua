@@ -40,6 +40,7 @@ return {
             ch_c_ante_base_per_round = { "When you play {C:attention}Blind{} increase base Blind size by {C:red}X#1#{}" },
             ch_c_always_draw_n_cards = { "Always Draw {C:attention}#1#{} cards" },
             ch_c_money_per_discard = { "Gain {C:attention}$#1#{} for every remaining discard" },
+            ch_c_start_with_stander_tag = { "Start the game with {C:attention}#1#{} Stander Tags" },
         },
     },
 
