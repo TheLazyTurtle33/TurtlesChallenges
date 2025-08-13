@@ -5,6 +5,7 @@ SMODS.Challenge({
             { id = "on_plasma" },
             { id = "blind_size_multi",   value = 2 },
             { id = "ante_scaling_speed", value = 3 },
+            { id = "no_scoring_jokers" },
             { id = "by_dessi" },
         },
         modifiers = {
@@ -16,6 +17,10 @@ SMODS.Challenge({
             --{id = 'reroll_cost', value = 5},
             --{id = 'consumable_slots', value = 2},
         },
+    },
+    consumeables = {
+        { id = 'c_heirophant' },
+        { id = 'c_tower' }
     },
     restrictions = {
         banned_cards = {

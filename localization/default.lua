@@ -32,6 +32,7 @@ return {
             ch_c_nope = { "{C:green}1 in #1#{} chance for any action to {C:red}NOT HAPPEN{}" },
             ch_c_stock_market = { "Instead earn from {C:red}-75%{} to {C:attention}150%{} of money" },
             ch_c_on_plasma = { "Play on {C:attention}Plasma Deck{}" },
+            ch_c_no_scoring_jokers = { "All {C:attention}Scoring{} jokers are {C:red}BANNED{}" },
             ch_c_warning_buggy = { "{C:red}WARNING THIS IS BUGGY{}" },
         },
     },
