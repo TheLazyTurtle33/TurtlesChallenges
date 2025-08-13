@@ -20,6 +20,9 @@ return {
             c_tc_nope = "NOPE",
             c_tc_stock_market = "Stock Market",
             c_tc_celestial_fusion = "Celestial Fusion ",
+            c_tc_speedrun = "SpeedRun ",
+            c_tc_needle_snake = "Needle Snake ",
+            c_tc_deck_builder = "Deck Builder ",
 
         },
         v_text = {
@@ -34,6 +37,10 @@ return {
             ch_c_on_plasma = { "Play on {C:attention}Plasma Deck{}" },
             ch_c_no_scoring_jokers = { "All {C:attention}Scoring{} jokers are {C:red}BANNED{}" },
             ch_c_warning_buggy = { "{C:red}WARNING THIS IS BUGGY{}" },
+            ch_c_ante_base_per_round = { "When you play {C:attention}Blind{} increase base Blind size by {C:red}X#1#{}" },
+            ch_c_always_draw_n_cards = { "Always Draw {C:attention}#1#{} cards" },
+            ch_c_money_per_discard = { "Gain {C:attention}$#1#{} for every remaining discard" },
         },
     },
+
 }

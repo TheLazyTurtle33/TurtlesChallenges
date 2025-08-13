@@ -1,0 +1,14 @@
+-- local Blind_set_blind_ref = Blind.set_blind
+-- function Blind:set_blind(blind, reset, silent)
+--     local ret = Blind_set_blind_ref(self, blind, reset, silent)
+--     if blind and G.GAME.modifiers.ante_base_per_round then
+--         G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling + G.GAME.modifiers.ante_base_per_round
+--     end
+
+--     -- if G.GAME.modifiers.must_flush_five and (not reset) and self.config.blind.boss and self.config.blind.boss.showdown then
+--     --     if G.GAME.hands["Flush Five"].played == 0 then
+--     --         end_round()
+--     --     end
+--     -- end
+--     return ret
+-- end

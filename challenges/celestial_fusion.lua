@@ -130,6 +130,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
+    button_colour = HEX("FF69B4"),
     unlocked = function()
         return true
     end

@@ -59,6 +59,12 @@ function Game:start_run(args)
                             G.GAME.planet_rate = 0
                         elseif v.id == 'ante_scaling_speed' then
                             G.GAME.modifiers.scaling = v.value
+                        elseif v.id == 'start_with_stander_tag' then
+                            for i = 1, v.value, 1 do
+                                add_tag(Tag('tag_standard'))
+                            end
+                        elseif v.id == 'money_per_discard' then
+                            G.GAME.modifiers.money_per_discard = v.value
                         end
                     end
                 end
