@@ -5,6 +5,7 @@ SMODS.Challenge({
             { id = "nope",           value = 4 },
             -- { id = "blind_size_multi", value = 0.9 },
             { id = "by_lazyturtle33" },
+            { id = "warning_buggy" },
 
         },
         modifiers = {

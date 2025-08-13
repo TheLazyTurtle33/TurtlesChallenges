@@ -57,8 +57,8 @@ function Game:start_run(args)
                             G.GAME.win_ante = v.value
                         elseif v.id == 'no_planets' then
                             G.GAME.planet_rate = 0
-                        elseif v.id == 'ante_scaling_2x' then
-                            G.GAME.modifiers.scaling = 2
+                        elseif v.id == 'ante_scaling_speed' then
+                            G.GAME.modifiers.scaling = v.value
                         end
                     end
                 end
