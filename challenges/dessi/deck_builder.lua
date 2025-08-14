@@ -3,6 +3,9 @@ SMODS.Challenge({
     rules = {
         custom = {
             { id = "start_with_stander_tag", value = 3 },
+            { id = "joker_rate",             value = 0.25 },
+            { id = "tarot_rate",             value = 0.25 },
+            { id = "planet_rate",            value = 0.25 },
             { id = "by_dessi" },
         },
         modifiers = {

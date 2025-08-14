@@ -48,7 +48,8 @@ local function load_files(dir)
 end
 
 load_files("challenges/turtle")
-load_files("challenges/dessi/")
+load_files("challenges/dessi")
+load_files("challenges")
 
 
 local game_start_run_ref = Game.start_run
@@ -69,6 +70,10 @@ function Game:start_run(args)
                             G.GAME.planet_rate = 0
                         elseif v.id == 'tarot_rate' then
                             G.GAME.tarot_rate = v.value
+                        elseif v.id == 'planet_rate' then
+                            G.GAME.planet_rate = v.value
+                        elseif v.id == 'joker_rate' then
+                            G.GAME.joker_rate = v.value
                         elseif v.id == 'ante_scaling_speed' then
                             G.GAME.modifiers.scaling = v.value
                         elseif v.id == 'start_with_stander_tag' then
