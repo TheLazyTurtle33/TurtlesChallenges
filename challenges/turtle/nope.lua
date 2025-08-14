@@ -109,13 +109,16 @@ function Blind:set_blind(blind, reset, silent)
             end
         }))
     else
+        if blind and G.GAME.modifiers.ante_base_per_round then
+            G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling +
+                G.GAME.modifiers.ante_base_per_round
+        end
         return ret
     end
 end
 
 local CardClickRef = Card.click;
 function Card:click()
-    -- print(G.GAME.last_tarot_planet)
     local ltp = G.GAME.last_tarot_planet
     -- if not copier then set_consumeable_usage(self) end
     local used_tarot = copier or self

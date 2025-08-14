@@ -1,11 +1,9 @@
 SMODS.Challenge({
-    key = "speedrun",
+    key = "skipper",
     rules = {
         custom = {
-            { id = "ante_scaling_speed", value = 4 },
-            -- { id = "ante_base_per_round", value = 0.25 },
-            { id = "reach_x_ante",       value = 5 },
-            { id = "by_dessi" },
+            { id = "ante_base_per_round", value = 0.25 },
+            { id = "by_lazyturtle33" },
         },
         modifiers = {
             --{id = 'dollars', value = 4},
@@ -16,11 +14,6 @@ SMODS.Challenge({
             --{id = 'reroll_cost', value = 5},
             --{id = 'consumable_slots', value = 2},
         },
-    },
-    jokers = {
-        { id = 'j_diet_cola' },
-        { id = 'j_diet_cola' },
-        { id = 'j_diet_cola' },
     },
     restrictions = {
         banned_cards = {
@@ -33,9 +26,19 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
-    button_colour = HEX("FF69B4"),
+    button_colour = HEX("00FBFF"),
     unlocked = function()
         return true
     end
 
 })
+
+
+local Blind_set_blind_ref = Blind.set_blind
+function Blind:set_blind(blind, reset, silent)
+    if blind and G.GAME.modifiers.ante_base_per_round then
+        G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling +
+            G.GAME.modifiers.ante_base_per_round
+    end
+    return Blind_set_blind_ref(self, blind, reset, silent)
+end

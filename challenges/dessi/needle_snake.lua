@@ -3,7 +3,7 @@ SMODS.Challenge({
     rules = {
         custom = {
             { id = "always_draw_n_cards", value = 3 },
-            { id = "money_per_discard",   value = 2 },
+            { id = "money_per_discard",   value = 3 },
             { id = "by_dessi" },
         },
         modifiers = {

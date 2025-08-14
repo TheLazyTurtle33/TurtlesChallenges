@@ -3,8 +3,8 @@ SMODS.Challenge({
     rules = {
         custom = {
             { id = "on_plasma" },
-            { id = "blind_size_multi",   value = 2 },
-            { id = "ante_scaling_speed", value = 3 },
+            { id = "blind_size_multi", value = 2 },
+            -- { id = "ante_scaling_speed", value = 2 },
             { id = "no_scoring_jokers" },
             { id = "by_dessi" },
         },

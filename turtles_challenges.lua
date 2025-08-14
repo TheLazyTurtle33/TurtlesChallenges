@@ -15,6 +15,9 @@ SMODS.Challenge({
             --{id = 'consumable_slots', value = 2},
         },
     },
+    jokers = {},
+    consumables = {},
+    vouchers = {},
     restrictions = {
         banned_cards = {
         },
@@ -26,6 +29,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
+    button_colour = HEX("00FBFF"), -- turtle
 	unlocked = function()
 		return true
 	end
@@ -34,12 +38,18 @@ SMODS.Challenge({
 ]]
 
 
-local challenges = NFS.getDirectoryItems(SMODS.current_mod.path .. "challenges")
-for _, chal in pairs(challenges) do
-    if string.sub(chal, string.len(chal) - 3) == '.lua' then
-        assert(SMODS.load_file("challenges/" .. chal))()
+local function load_files(dir)
+    local challenges = NFS.getDirectoryItems(SMODS.current_mod.path .. dir)
+    for _, chal in pairs(challenges) do
+        if string.sub(chal, string.len(chal) - 3) == '.lua' then
+            assert(SMODS.load_file(dir .. "/" .. chal))()
+        end
     end
 end
+
+load_files("challenges/turtle")
+load_files("challenges/dessi/")
+
 
 local game_start_run_ref = Game.start_run
 function Game:start_run(args)
@@ -57,6 +67,8 @@ function Game:start_run(args)
                             G.GAME.win_ante = v.value
                         elseif v.id == 'no_planets' then
                             G.GAME.planet_rate = 0
+                        elseif v.id == 'tarot_rate' then
+                            G.GAME.tarot_rate = v.value
                         elseif v.id == 'ante_scaling_speed' then
                             G.GAME.modifiers.scaling = v.value
                         elseif v.id == 'start_with_stander_tag' then
@@ -71,4 +83,16 @@ function Game:start_run(args)
             end
         end
     end
+end
+
+local loc_colour_ref = loc_colour
+function loc_colour(_c, _default)
+    if not G.ARGS.LOC_COLOURS then
+        loc_colour_ref()
+    end
+
+    G.ARGS.LOC_COLOURS["pink"] = HEX("FF69B4")
+    G.ARGS.LOC_COLOURS["light_blue"] = HEX("00FBFF")
+
+    return loc_colour_ref(_c, _default)
 end
