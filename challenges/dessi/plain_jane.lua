@@ -80,6 +80,7 @@ SMODS.Challenge({
             { id = 'tag_foil' },
             { id = 'tag_holo' },
             { id = 'tag_polychrome' },
+            { id = 'tag_standard' },
         },
         banned_other = {
         },
@@ -87,7 +88,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
-    button_colour = HEX("FF69B4"),
+    button_colour = HEX("808080"),
     unlocked = function()
         return true
     end

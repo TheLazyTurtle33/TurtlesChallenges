@@ -34,7 +34,7 @@ return {
         v_text = {
             ch_c_by_lazyturtle33 = { "By {C:light_blue}LazyTurtle33{}" },
             ch_c_by_dessi = { "Idea By {C:pink}Dessi{}" },
-            ch_c_by_dessi_no_color = { "Idea By Dessi" },
+            ch_c_by_dessi_no_color = { "{C:gray}Idea By Dessi{}" },
             ch_c_no_planets = { "{C:attention}Planet cards{} no longer {C:red}Exist{}" },
             ch_c_reach_x_ante = { "Reach Ante {C:attention}#1#{} to {C:attention}win" },
             ch_c_blind_size_multi = { "{C:red}X#1#{} base Blind size" },
@@ -57,7 +57,7 @@ return {
             ch_c_one_hand_type = { "Play only {C:red}one{} hand type every bind" },
             ch_c_thief = { "You can steal" },
             ch_c_level_up_N_times = { "Repeat every level up {C:attention}#1#X{}" },
-            ch_c_its_all_so_plain = { "its all so...  plain" },
+            ch_c_its_all_so_plain = { "{C:gray}its all so...  plain{}" },
         },
     },
 

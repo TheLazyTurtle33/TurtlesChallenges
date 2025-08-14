@@ -98,6 +98,7 @@ function loc_colour(_c, _default)
 
     G.ARGS.LOC_COLOURS["pink"] = HEX("FF69B4")
     G.ARGS.LOC_COLOURS["light_blue"] = HEX("00FBFF")
+    G.ARGS.LOC_COLOURS["gray"] = HEX("808080")
 
     return loc_colour_ref(_c, _default)
 end
