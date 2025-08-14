@@ -24,6 +24,29 @@ SMODS.Challenge({
     },
     restrictions = {
         banned_cards = {
+            { id = 'j_dna' },
+            { id = 'j_vagabond' },
+            { id = 'j_baron' },
+            { id = 'j_obelisk' },
+            { id = 'j_baseball' },
+            { id = 'j_ancient' },
+            { id = 'j_campfire' },
+            { id = 'j_blueprint' },
+            { id = 'j_wee' },
+            { id = 'j_duo' },
+            { id = 'j_trio' },
+            { id = 'j_family' },
+            { id = 'j_order' },
+            { id = 'j_tribe' },
+            { id = 'j_stuntman' },
+            { id = 'j_invisible' },
+            { id = 'j_brainstorm' },
+            { id = 'j_drivers_license' },
+            { id = 'j_burnt' },
+
+
+
+
             { id = 'c_magician' },
             { id = 'c_emperor' },
             { id = 'c_heirophant' },
