@@ -55,7 +55,7 @@ SMODS.Challenge({ -- Empty Orbit
     },
     deck = {
     },
-    button_colour = HEX("00FBFF"),
+    button_colour = LIGHT_BLUE,
     unlocked = function()
         return true
     end

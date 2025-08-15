@@ -47,6 +47,21 @@ local function load_files(dir)
     end
 end
 
+PINK = HEX("FF69B4")
+LIGHT_BLUE = HEX("23C9C0")
+local loc_colour_ref = loc_colour
+function loc_colour(_c, _default)
+    if not G.ARGS.LOC_COLOURS then
+        loc_colour_ref()
+    end
+
+    G.ARGS.LOC_COLOURS["pink"] = PINK
+    G.ARGS.LOC_COLOURS["light_blue"] = LIGHT_BLUE
+    G.ARGS.LOC_COLOURS["gray"] = HEX("808080")
+
+    return loc_colour_ref(_c, _default)
+end
+
 load_files("challenges/turtle")
 load_files("challenges/dessi")
 load_files("challenges")
@@ -88,17 +103,4 @@ function Game:start_run(args)
             end
         end
     end
-end
-
-local loc_colour_ref = loc_colour
-function loc_colour(_c, _default)
-    if not G.ARGS.LOC_COLOURS then
-        loc_colour_ref()
-    end
-
-    G.ARGS.LOC_COLOURS["pink"] = HEX("FF69B4")
-    G.ARGS.LOC_COLOURS["light_blue"] = HEX("00FBFF")
-    G.ARGS.LOC_COLOURS["gray"] = HEX("808080")
-
-    return loc_colour_ref(_c, _default)
 end

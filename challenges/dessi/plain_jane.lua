@@ -43,6 +43,9 @@ SMODS.Challenge({
             { id = 'j_brainstorm' },
             { id = 'j_drivers_license' },
             { id = 'j_burnt' },
+            { id = 'j_marble' },
+            { id = 'j_certificate' },
+            { id = 'j_trading' },
 
 
 

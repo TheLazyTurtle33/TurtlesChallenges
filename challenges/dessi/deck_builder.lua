@@ -33,7 +33,7 @@ SMODS.Challenge({
         type = 'Challenge Deck',
         yes_ranks = {},
     },
-    button_colour = HEX("FF69B4"),
+    button_colour = PINK,
     unlocked = function()
         return true
     end

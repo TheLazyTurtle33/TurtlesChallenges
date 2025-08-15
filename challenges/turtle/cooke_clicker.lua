@@ -30,7 +30,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
-    button_colour = HEX("00FBFF"), -- turtle
+    button_colour = LIGHT_BLUE, -- turtle
     unlocked = function()
         return true
     end

@@ -35,7 +35,7 @@ SMODS.Challenge({
     unlocked = function()
         return true
     end,
-    button_colour = HEX("FF69B4"),
+    button_colour = PINK,
 
 })
 
