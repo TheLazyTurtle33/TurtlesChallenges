@@ -67,6 +67,15 @@ G.FUNCS.buy_from_shop = function(e)
     buy_from_shop_ref(e)
 end
 
+local can_buy_ref = G.FUNCS.can_buy
+G.FUNCS.can_buy = function(e)
+    if G.GAME.modifiers.thief then
+        e.config.colour = G.C.ORANGE
+        e.config.button = 'buy_from_shop'
+    else
+        can_buy_ref(e)
+    end
+end
 
 local use_card_ref = G.FUNCS.use_card;
 G.FUNCS.use_card = function(e, mute, nosave)
