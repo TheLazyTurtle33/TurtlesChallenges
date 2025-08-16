@@ -26,9 +26,11 @@ return {
             c_tc_skipper          = "Skipper",
             c_tc_cooke_clicker    = "Cookie Clicker",
             c_tc_purgatory        = "Poker Purgatory",
-            c_tc_mouth            = "The Mouth",
+            c_tc_bocadolia        = "Bocadolia",
             c_tc_thief            = "Thief",
             c_tc_plain_jane       = "Plain Jane",
+            c_tc_solar            = "Solar",
+            c_tc_claustrophobia   = "Claustrophobia",
 
         },
         v_text = {
@@ -58,6 +60,9 @@ return {
             ch_c_thief = { "You can steal cards from the shop" },
             ch_c_level_up_N_times = { "Each level-up grants {C:attention}+#1#{} extra levels" },
             ch_c_its_all_so_plain = { "{C:gray}its all so...  plain{}" },
+            ch_c_claustrophobia = { "After every Boss beaten: {C:red}-1{} hand (until 1 hand left)" },
+            ch_c_claustrophobia1 = { "{C:red}-1{} discard, {C:red}-1{} consumable slot" },
+            ch_c_claustrophobia2 = { "{C:red}-1{} shop slot (until 1 left) {C:red}-1{} joker slot" },
         },
     },
 

@@ -1,5 +1,5 @@
 SMODS.Challenge({
-    key = "mouth",
+    key = "bocadolia",
     rules = {
         custom = {
             { id = "level_up_N_times", value = 1 },
@@ -25,7 +25,8 @@ SMODS.Challenge({
         banned_tags = {
         },
         banned_other = {
-            { id = 'bl_mouth', type = 'blind' },
+            { id = 'bl_mouth',   type = 'blind' },
+            { id = 'bl_psychic', type = 'blind' },
         },
     },
     deck = {

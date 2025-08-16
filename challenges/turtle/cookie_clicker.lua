@@ -3,7 +3,7 @@ SMODS.Challenge({
     rules = {
         custom = {
             { id = "cooke_clicker1" },
-            { id = "cooke_clicker",  value = 0.01 },
+            { id = "cooke_clicker",  value = 0.005 },
             { id = "by_lazyturtle33" },
         },
         modifiers = {

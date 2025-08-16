@@ -29,7 +29,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
-    button_colour = HEX("00FBFF"), -- turtle
+    button_colour = LIGHT_BLUE, -- turtle
 	unlocked = function()
 		return true
 	end
@@ -91,6 +91,12 @@ function Game:start_run(args)
                             G.GAME.joker_rate = v.value
                         elseif v.id == 'ante_scaling_speed' then
                             G.GAME.modifiers.scaling = v.value
+                        elseif v.id == 'start_shop_slots' then
+                            change_shop_size(v.value)
+                        elseif v.id == 'no_base_chips' then
+                            for key, value in pairs(G.GAME.hands) do
+                                G.GAME.hands[key].chips = 0
+                            end
                         elseif v.id == 'start_with_stander_tag' then
                             for i = 1, v.value, 1 do
                                 add_tag(Tag('tag_standard'))
