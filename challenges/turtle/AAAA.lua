@@ -54,6 +54,7 @@ SMODS.Challenge({ -- AAAA
         type = 'Challenge Deck',
         yes_ranks = { ['A'] = true },
     },
+    button_colour = LIGHT_BLUE,
     unlocked = function()
         return true
     end
@@ -126,6 +127,7 @@ SMODS.Challenge({ -- AAAA but fuck you
         type = 'Challenge Deck',
         yes_ranks = { ['A'] = true },
     },
+    button_colour = LIGHT_BLUE,
     unlocked = function()
         return true
     end

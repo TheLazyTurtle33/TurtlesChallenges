@@ -15,6 +15,9 @@ SMODS.Challenge({
             --{id = 'consumable_slots', value = 2},
         },
     },
+    jokers = {},
+    consumables = {},
+    vouchers = {},
     restrictions = {
         banned_cards = {
         },
@@ -26,6 +29,7 @@ SMODS.Challenge({
     deck = {
         type = 'Challenge Deck'
     },
+    button_colour = LIGHT_BLUE, -- turtle
 	unlocked = function()
 		return true
 	end
@@ -34,12 +38,34 @@ SMODS.Challenge({
 ]]
 
 
-local challenges = NFS.getDirectoryItems(SMODS.current_mod.path .. "challenges")
-for _, chal in pairs(challenges) do
-    if string.sub(chal, string.len(chal) - 3) == '.lua' then
-        assert(SMODS.load_file("challenges/" .. chal))()
+local function load_files(dir)
+    local challenges = NFS.getDirectoryItems(SMODS.current_mod.path .. dir)
+    for _, chal in pairs(challenges) do
+        if string.sub(chal, string.len(chal) - 3) == '.lua' then
+            assert(SMODS.load_file(dir .. "/" .. chal))()
+        end
     end
 end
+
+PINK = HEX("FF69B4")
+LIGHT_BLUE = HEX("23C9C0")
+local loc_colour_ref = loc_colour
+function loc_colour(_c, _default)
+    if not G.ARGS.LOC_COLOURS then
+        loc_colour_ref()
+    end
+
+    G.ARGS.LOC_COLOURS["pink"] = PINK
+    G.ARGS.LOC_COLOURS["light_blue"] = LIGHT_BLUE
+    G.ARGS.LOC_COLOURS["gray"] = HEX("808080")
+
+    return loc_colour_ref(_c, _default)
+end
+
+load_files("challenges/turtle")
+load_files("challenges/dessi")
+load_files("challenges")
+
 
 local game_start_run_ref = Game.start_run
 function Game:start_run(args)
@@ -57,8 +83,26 @@ function Game:start_run(args)
                             G.GAME.win_ante = v.value
                         elseif v.id == 'no_planets' then
                             G.GAME.planet_rate = 0
+                        elseif v.id == 'tarot_rate' then
+                            G.GAME.tarot_rate = v.value
+                        elseif v.id == 'planet_rate' then
+                            G.GAME.planet_rate = v.value
+                        elseif v.id == 'joker_rate' then
+                            G.GAME.joker_rate = v.value
                         elseif v.id == 'ante_scaling_speed' then
                             G.GAME.modifiers.scaling = v.value
+                        elseif v.id == 'start_shop_slots' then
+                            change_shop_size(v.value)
+                        elseif v.id == 'no_base_chips' then
+                            for key, value in pairs(G.GAME.hands) do
+                                G.GAME.hands[key].chips = 0
+                            end
+                        elseif v.id == 'start_with_stander_tag' then
+                            for i = 1, v.value, 1 do
+                                add_tag(Tag('tag_standard'))
+                            end
+                        elseif v.id == 'money_per_discard' then
+                            G.GAME.modifiers.money_per_discard = v.value
                         end
                     end
                 end
