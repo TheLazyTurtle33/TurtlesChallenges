@@ -2,8 +2,7 @@ SMODS.Challenge({
     key = "deck_builder",
     rules = {
         custom = {
-            { id = "start_with_standard_tag", value = 3 },
-            { id = "debuff_played_cards" },
+            { id = "start_with_standard_tag", value = 5 },
             { id = "joker_rate",              value = 0.5 },
             { id = "tarot_rate",              value = 0.5 },
             { id = "planet_rate",             value = 0.5 },
@@ -59,6 +58,7 @@ G.FUNCS.evaluate_play = function(e)
                         return true
                     end
                 }))
+                delay(0.2)
             end
         end
     end
