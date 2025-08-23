@@ -10,7 +10,7 @@ SMODS.Challenge({
             { id = "no_reward" },
             { id = "no_interest" },
             { id = 'stock_market' },
-            { id = "win_ante",               value = 16 },
+            { id = "reach_x_ante",           value = 16 },
             { id = "blind_size_multi",       value = 0.5 },
             { id = "cooke_clicker1" },
             { id = "cooke_clicker",          value = 0.0005 },

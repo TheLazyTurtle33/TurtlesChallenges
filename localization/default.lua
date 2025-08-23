@@ -32,6 +32,7 @@ return {
             c_tc_solar            = "Solar",
             c_tc_claustrophobia   = "Claustrophobia",
             c_tc_blackjack        = "BlackJack",
+            c_tc_run_aways        = "The Run Aways",
 
         },
         v_text = {
@@ -59,7 +60,7 @@ return {
             ch_c_planet_rate = { "Planet are {C:attention}#1#X{} as likely" },
             ch_c_one_hand_type = { "Play only {C:red}one{} hand type every blind" },
             ch_c_thief = { "You can steal cards from the shop" },
-            ch_c_level_up_N_times = { "Each level-up grants {C:attention}+#1#{} extra levels" },
+            ch_c_level_up_N_extra_times = { "Each level-up grants {C:attention}+#1#{} extra levels" },
             ch_c_its_all_so_plain = { "{C:gray}its all so...  plain{}" },
             ch_c_claustrophobia = { "After every Boss beaten: {C:red}-1{} hand (until 1 hand left)" },
             ch_c_claustrophobia1 = { "{C:red}-1{} discard, {C:red}-1{} consumable slot" },

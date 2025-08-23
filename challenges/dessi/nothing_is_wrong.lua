@@ -1,0 +1,3 @@
+-- it's literally just a normal run Until you get to ante 8
+-- Once you reach ante 8 you get jumpscared and sent to hell
+-- Just the background becomes red and you need to reach 666,666,666 score for the final boss/j

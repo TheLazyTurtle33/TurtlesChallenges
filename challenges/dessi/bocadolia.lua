@@ -2,7 +2,7 @@ SMODS.Challenge({
     key = "bocadolia",
     rules = {
         custom = {
-            { id = "level_up_N_times", value = 1 },
+            { id = "level_up_N_extra_times", value = 1 },
             { id = "one_hand_type" },
             { id = "by_dessi" },
         },
