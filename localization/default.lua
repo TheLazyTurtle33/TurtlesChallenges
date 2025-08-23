@@ -23,7 +23,7 @@ return {
             c_tc_speedrun         = "SpeedRun ",
             c_tc_needle_snake     = "Needle Snake ",
             c_tc_deck_builder     = "Deck Builder ",
-            c_tc_skipper          = "Skipper",
+            c_tc_avoidance        = "Avoidance",
             c_tc_cooke_clicker    = "Cookie Clicker",
             c_tc_purgatory        = "Poker Purgatory",
             c_tc_bocadolia        = "Bocadolia",
@@ -31,6 +31,7 @@ return {
             c_tc_plain_jane       = "Plain Jane",
             c_tc_solar            = "Solar",
             c_tc_claustrophobia   = "Claustrophobia",
+            c_tc_blackjack        = "BlackJack",
 
         },
         v_text = {
@@ -52,7 +53,7 @@ return {
             ch_c_cooke_clicker = { "increase base size multiplier by {C:red}#1#{}" },
             ch_c_always_draw_n_cards = { "Always Draw {C:attention}#1#{} cards" },
             ch_c_money_per_discard = { "Gain {C:attention}$#1#{} for every remaining discard" },
-            ch_c_start_with_stander_tag = { "Start the game with {C:attention}#1#{} Standard  Tags" },
+            ch_c_start_with_standard_tag = { "Start the game with {C:attention}#1#{} Standard  Tags" },
             ch_c_joker_rate = { "Jokers are {C:attention}#1#X{} as likely" },
             ch_c_tarot_rate = { "Tarot are {C:attention}#1#X{} as likely" },
             ch_c_planet_rate = { "Planet are {C:attention}#1#X{} as likely" },
@@ -63,6 +64,11 @@ return {
             ch_c_claustrophobia = { "After every Boss beaten: {C:red}-1{} hand (until 1 hand left)" },
             ch_c_claustrophobia1 = { "{C:red}-1{} discard, {C:red}-1{} consumable slot" },
             ch_c_claustrophobia2 = { "{C:red}-1{} shop slot (until 1 left) {C:red}-1{} joker slot" },
+            ch_c_no_base_chips = { "All hands start with {C:red}NO{} {C:blue}chips{}" },
+            ch_c_must_play_at_least_N_cards = { "must play at least #1# cards" },
+            ch_c_blackjack = { "{C:red}-1{} {C:blue}Hands{} if cards in hand sum is grater than 21" },
+            ch_c_blind_reward_mult = { "{C:attention}X#1#{} Blind reward" },
+            ch_c_fragile = { "1 in #1# chance to {C:red}DESTROY{} a card when scored" },
         },
     },
 

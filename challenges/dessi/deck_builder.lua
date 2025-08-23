@@ -2,10 +2,12 @@ SMODS.Challenge({
     key = "deck_builder",
     rules = {
         custom = {
-            { id = "start_with_stander_tag", value = 3 },
-            { id = "joker_rate",             value = 0.25 },
-            { id = "tarot_rate",             value = 0.25 },
-            { id = "planet_rate",            value = 0.25 },
+            { id = "start_with_standard_tag", value = 3 },
+            { id = "debuff_played_cards" },
+            { id = "joker_rate",              value = 0.5 },
+            { id = "tarot_rate",              value = 0.5 },
+            { id = "planet_rate",             value = 0.5 },
+            { id = "fragile",                 value = 2 },
             { id = "by_dessi" },
         },
         modifiers = {
@@ -39,3 +41,25 @@ SMODS.Challenge({
     end
 
 })
+
+local evaluate_play_ref = G.FUNCS.evaluate_play
+G.FUNCS.evaluate_play = function(e)
+    evaluate_play_ref(e)
+    if G.GAME.modifiers.fragile then
+        local text, disp_text, poker_hands, scoring_hand, non_loc_disp_text = G.FUNCS.get_poker_hand_info(G.play.cards)
+        for i = 1, #scoring_hand, 1 do
+            if pseudorandom('fragile') < G.GAME.probabilities.normal / G.GAME.modifiers.fragile then
+                G.E_MANAGER:add_event(Event({
+                    func = function()
+                        if scoring_hand[i].ability.name == 'Glass Card' then
+                            scoring_hand[i]:shatter()
+                        else
+                            scoring_hand[i]:start_dissolve()
+                        end
+                        return true
+                    end
+                }))
+            end
+        end
+    end
+end

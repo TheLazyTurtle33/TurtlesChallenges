@@ -1,8 +1,9 @@
 SMODS.Challenge({
-    key = "skipper",
+    key = "avoidance",
     rules = {
         custom = {
-            { id = "ante_base_per_round", value = 0.25 },
+            { id = "ante_base_per_round", value = 0.15 },
+            { id = "blind_reward_mult",   value = 3 },
             { id = "by_lazyturtle33" },
         },
         modifiers = {
@@ -41,4 +42,12 @@ function Blind:set_blind(blind, reset, silent)
             G.GAME.modifiers.ante_base_per_round
     end
     return Blind_set_blind_ref(self, blind, reset, silent)
+end
+
+local set_blind_ref = Blind.set_blind
+function Blind:set_blind(blind, reset, silent)
+    if G.GAME.modifiers.blind_reward_mult and blind then
+        blind.dollars = blind.dollars * G.GAME.modifiers.blind_reward_mult
+    end
+    set_blind_ref(self, blind, reset, silent)
 end

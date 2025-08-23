@@ -6,5 +6,5 @@
   "description": "Adds some Challenges made by LazyTurtle33",
   "prefix": "tc",
   "main_file": "turtles_challenges.lua",
-  "version": "1.5"
+  "version": "1.5.1"
 }

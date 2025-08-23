@@ -57,7 +57,7 @@ function end_round()
 
         if G.jokers.config.card_limit > 0 then
             if G.jokers then
-                G.jokers.config.card_limit = G.jokers.config.card_limit + 1
+                G.jokers.config.card_limit = G.jokers.config.card_limit - 1
             end
         end
     end

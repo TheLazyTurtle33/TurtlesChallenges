@@ -46,11 +46,13 @@ SMODS.Challenge({
             { id = 'j_marble' },
             { id = 'j_certificate' },
             { id = 'j_trading' },
+            { id = 'j_hit_the_road' },
 
 
 
 
             { id = 'c_magician' },
+            { id = 'c_empress' },
             { id = 'c_emperor' },
             { id = 'c_heirophant' },
             { id = 'c_lovers' },

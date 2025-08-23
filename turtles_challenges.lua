@@ -97,7 +97,7 @@ function Game:start_run(args)
                             for key, value in pairs(G.GAME.hands) do
                                 G.GAME.hands[key].chips = 0
                             end
-                        elseif v.id == 'start_with_stander_tag' then
+                        elseif v.id == 'start_with_standard_tag' then
                             for i = 1, v.value, 1 do
                                 add_tag(Tag('tag_standard'))
                             end
