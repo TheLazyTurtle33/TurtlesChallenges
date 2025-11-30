@@ -5,6 +5,9 @@ SMODS.Challenge({
             { id = "no_base_chips" },
             { id = "must_play_at_least_N_cards", value = 2 },
             { id = "blackjack" },
+            { id = "blackjack_1" },
+            { id = "blackjack_2" },
+            { id = "blackjack_3" },
             { id = "by_dessi" },
         },
         modifiers = {
@@ -17,7 +20,9 @@ SMODS.Challenge({
             --{id = 'consumable_slots', value = 2},
         },
     },
-    jokers = {},
+    jokers = {
+        { id = 'j_splash', edition = 'negative', eternal = true }
+    },
     consumables = {},
     vouchers = {},
     restrictions = {
@@ -216,7 +221,7 @@ end
 
 local trigger_effect_ref = Back.trigger_effect
 function Back:trigger_effect(args)
-    if not args then return end
+    -- if not args then return end
     if G.GAME.modifiers.blackjack and args.context == 'final_scoring_step' then
         if not G.GAME.modifiers.blackjack_vals then
             G.GAME.modifiers.blackjack_vals = {
@@ -280,5 +285,5 @@ function Back:trigger_effect(args)
 
         return args.chips, args.mult
     end
-    return trigger_effect_ref(args)
+    return trigger_effect_ref(self, args)
 end

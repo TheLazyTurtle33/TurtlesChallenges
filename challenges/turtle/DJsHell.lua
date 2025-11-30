@@ -1,0 +1,37 @@
+-- SMODS.Challenge({
+--     key = "",
+--     rules = {
+--         custom = {
+--             { id = "by",          value = 'LazyTurtle33' },
+--             { id = "inspired_by",    value = 'DJSoupandSalad' },
+--         },
+--         modifiers = {
+--             --{id = 'dollars', value = 4},
+--             --{id = 'discards', value = 3},
+--             --{id = 'hands', value = 4},
+--             --{id = 'hand_size', value = 8},
+--             --{id = 'joker_slots', value = 5},
+--             --{id = 'reroll_cost', value = 5},
+--             --{id = 'consumable_slots', value = 2},
+--         },
+--     },
+--     jokers = {},
+--     consumables = {},
+--     vouchers = {},
+--     restrictions = {
+--         banned_cards = {
+--         },
+--         banned_tags = {
+--         },
+--         banned_other = {
+--         },
+--     },
+--     deck = {
+--         type = 'Challenge Deck'
+--     },
+--     button_colour = LIGHT_BLUE, -- turtle
+--     unlocked = function()
+--         return true
+--     end
+
+-- })

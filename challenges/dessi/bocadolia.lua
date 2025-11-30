@@ -80,8 +80,8 @@ end
 local level_up_hand_ref = level_up_hand
 function level_up_hand(card, hand, instant, amount)
     level_up_hand_ref(card, hand, instant, amount)
-    if G.GAME.modifiers.level_up_N_times then
-        for i = 1, G.GAME.modifiers.level_up_N_times, 1 do
+    if G.GAME.modifiers.level_up_N_extra_times then
+        for i = 1, G.GAME.modifiers.level_up_N_extra_times, 1 do
             level_up_hand_ref(card, hand, instant, amount)
         end
     end

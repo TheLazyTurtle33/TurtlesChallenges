@@ -6,7 +6,7 @@ SMODS.Challenge({
             { id = "joker_rate",              value = 0.5 },
             { id = "tarot_rate",              value = 0.5 },
             { id = "planet_rate",             value = 0.5 },
-            { id = "fragile",                 value = 2 },
+            { id = "fragile",                 value = 3 },
             { id = "by_dessi" },
         },
         modifiers = {
@@ -46,20 +46,30 @@ G.FUNCS.evaluate_play = function(e)
     evaluate_play_ref(e)
     if G.GAME.modifiers.fragile then
         local text, disp_text, poker_hands, scoring_hand, non_loc_disp_text = G.FUNCS.get_poker_hand_info(G.play.cards)
+        local DESTROY_cards = {}
+    
         for i = 1, #scoring_hand, 1 do
-            if pseudorandom('fragile') < G.GAME.probabilities.normal / G.GAME.modifiers.fragile then
-                G.E_MANAGER:add_event(Event({
-                    func = function()
-                        if scoring_hand[i].ability.name == 'Glass Card' then
-                            scoring_hand[i]:shatter()
-                        else
-                            scoring_hand[i]:start_dissolve()
-                        end
-                        return true
-                    end
-                }))
-                delay(0.2)
+            if pseudorandom('fragile') < 1 / G.GAME.modifiers.fragile then
+                if scoring_hand[i].ability.name == 'Glass Card' then
+                    scoring_hand[i].shattered = true
+                else
+                    scoring_hand[i].destroyed = true
+                end
+                DESTROY_cards[#DESTROY_cards + 1] = scoring_hand[i]
             end
+        end
+        for i = 1, #DESTROY_cards, 1 do
+            G.E_MANAGER:add_event(Event({
+                func = function()
+                    if DESTROY_cards[i].ability.name == 'Glass Card' then
+                        DESTROY_cards[i]:shatter()
+                    else
+                        DESTROY_cards[i]:start_dissolve()
+                    end
+                    return true
+                end
+            }))
+            delay(0.2)
         end
     end
 end

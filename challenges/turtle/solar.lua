@@ -22,7 +22,7 @@ SMODS.Challenge({
     restrictions = {
         banned_cards = {
             { id = 'v_wasteful' },
-            { id = 'j_drunker' },
+            { id = 'j_drunkard' },
             { id = 'j_merry_andy' },
             {
                 id = 'c_pluto',

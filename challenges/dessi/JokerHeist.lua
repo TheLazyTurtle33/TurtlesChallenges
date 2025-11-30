@@ -1,5 +1,5 @@
 SMODS.Challenge({
-    key = "thief",
+    key = "jokerheist",
     rules = {
         custom = {
             { id = "thief" },
@@ -39,27 +39,33 @@ SMODS.Challenge({
 
 local buy_from_shop_ref = G.FUNCS.buy_from_shop;
 G.FUNCS.buy_from_shop = function(e)
+    
     local card = e.config.ref_table
     if G.GAME.modifiers.ante_base_per_purchase then
-        G.E_MANAGER:add_event(Event({
-            trigger = 'after',
-            delay = 0.4,
-            func = function()
-                attention_text({
-                    text = "+" .. G.GAME.modifiers.ante_base_per_purchase,
-                    scale = 0.9,
-                    hold = 0.8,
-                    major = card,
-                    backdrop_colour = G.C.RED,
-                    -- align = 'cm',
-                    offset = { x = 0, y = 0 },
-                    silent = true
-                })
-                return true
+        local c1 = e.config.ref_table
+        if c1 and c1:is(Card) then
+            if G.FUNCS.check_for_buy_space(c1) then
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'after',
+                    delay = 0.4,
+                    func = function()
+                        attention_text({
+                            text = "+" .. G.GAME.modifiers.ante_base_per_purchase,
+                            scale = 0.9,
+                            hold = 0.8,
+                            major = card,
+                            backdrop_colour = G.C.RED,
+                            -- align = 'cm',
+                            offset = { x = 0, y = 0 },
+                            silent = true
+                        })
+                        return true
+                    end
+                }))
+                G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling +
+                    G.GAME.modifiers.ante_base_per_purchase
             end
-        }))
-        G.GAME.starting_params.ante_scaling = G.GAME.starting_params.ante_scaling +
-            G.GAME.modifiers.ante_base_per_purchase
+        end
     end
     if G.GAME.modifiers.thief then
         e.config.ref_table.cost = 0
